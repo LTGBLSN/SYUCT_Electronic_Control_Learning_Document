@@ -126,19 +126,20 @@ int main(void)
 	  
 	  
 	  
-//	  if(local_rc_ctrl->rc.s[0]  == 3 )
-//	  {
-//		  give_speed = 3000.0f ;
-//	  }
-//	  else
-//	  {
-//		  give_speed = 0.0f ;
-//	  }
+	  if(local_rc_ctrl->rc.s[0]  == 3 )
+	  {
+		  give_speed = 3000.0f ;
+	  }
+	  else
+	  {
+		  give_speed = 0.0f ;
+	  }
 	  
 	  
-	  give_speed = local_rc_ctrl->rc.ch[1] * 5 ;//速度赋值——遥控器
+//	  give_speed = local_rc_ctrl->rc.ch[1] * 5 ;//速度赋值——遥控器
 	  
 	  give_current = speed_pid_loop(give_speed);//pid计算
+
 	  
       CAN_cmd_chassis(0, 0, give_current, 0);//电流发送
 	  
